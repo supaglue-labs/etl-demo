@@ -1,5 +1,5 @@
-// Import necessary modules
-import express, {json} from 'express';
+import 'dotenv/config';
+import express, { json } from 'express';
 
 const app = express();
 
