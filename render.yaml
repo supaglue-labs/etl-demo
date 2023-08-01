@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: etl-demo
+    runtime: node
+    buildCommand: yarn install
+    startCommand: yarn start
