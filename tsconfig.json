@@ -1,13 +1,10 @@
 {
+  "extends": "@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "target": "es2020",
-    "module": "es2020",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "NodeNext"
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "lib": ["es6"]
   },
-  "ts-node": {
-    "esm": true
-  }
+  "exclude": ["node_modules", "dist"]
 }

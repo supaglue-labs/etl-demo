@@ -4,3 +4,23 @@ services:
     runtime: node
     buildCommand: yarn install
     startCommand: yarn start
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: redis
+          property: host # available properties are listed below
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: lightning
+          property: port
+  - type: redis
+    name: redis
+    ipAllowList: # required
+      - source: 0.0.0.0/0
+        description: everywhere
+    plan: free
+    maxmemoryPolicy: noeviction
